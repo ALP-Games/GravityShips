@@ -1,13 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://dg03d2aho0n3x"]
+[gd_scene load_steps=13 format=3 uid="uid://dg03d2aho0n3x"]
 
 [ext_resource type="Script" path="res://scripts/ship_part.gd" id="1_ofuqu"]
 [ext_resource type="Script" path="res://scripts/components/thruster_component.gd" id="2_n6nma"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lihfu"]
-size = Vector3(0.408203, 1, 1)
+size = Vector3(0.408, 1.77, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_m0gaq"]
-size = Vector2(0.4, 1)
+size = Vector2(0.4, 1.75)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xo1ov"]
 radius = 6.27394
@@ -24,10 +24,17 @@ material = SubResource("StandardMaterial3D_qw4rh")
 custom_aabb = AABB(2.08165e-12, 2.08165e-12, 2.08165e-12, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 size = Vector2(0.61, 0.5)
 
-[sub_resource type="InputEventKey" id="InputEventKey_ir52r"]
+[sub_resource type="InputEventKey" id="InputEventKey_2f5op"]
 device = -1
 keycode = 87
 unicode = 119
+
+[sub_resource type="InputEventKey" id="InputEventKey_ir52r"]
+device = -1
+keycode = 83
+physical_keycode = 83
+key_label = 83
+unicode = 115
 
 [sub_resource type="InputEventKey" id="InputEventKey_ksvxs"]
 device = -1
@@ -43,6 +50,7 @@ unicode = 97
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
+mass = 50.0
 script = ExtResource("1_ofuqu")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
@@ -55,16 +63,39 @@ mesh = SubResource("QuadMesh_m0gaq")
 [node name="Area3D" type="Area3D" parent="."]
 gravity_space_override = 1
 gravity_point = true
-gravity_point_unit_distance = 0.75
+gravity_point_unit_distance = 0.1
 gravity_point_center = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
 gravity_direction = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_xo1ov")
-disabled = true
+
+[node name="PinJoint3D" type="PinJoint3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.87804, 0)
+node_a = NodePath("..")
+node_b = NodePath("../Thruster")
+exclude_nodes_from_collision = false
+
+[node name="PinJoint3D2" type="PinJoint3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.870813, 0)
+node_a = NodePath("..")
+node_b = NodePath("../Thruster4")
+exclude_nodes_from_collision = false
+
+[node name="PinJoint3D3" type="PinJoint3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20596, 0.527546, 0)
+node_a = NodePath("..")
+node_b = NodePath("../Thruster2")
+exclude_nodes_from_collision = false
+
+[node name="PinJoint3D4" type="PinJoint3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20596, 0.527546, 0)
+node_a = NodePath("..")
+node_b = NodePath("../Thruster3")
+exclude_nodes_from_collision = false
 
 [node name="Thruster" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.761203, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.12818, 0)
 script = ExtResource("1_ofuqu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Thruster"]
@@ -76,13 +107,31 @@ skeleton = NodePath("")
 
 [node name="ThrusterComponent" type="Node" parent="Thruster"]
 script = ExtResource("2_n6nma")
+thrust_amount = 50.0
+activation_input = SubResource("InputEventKey_2f5op")
+
+[node name="Thruster4" type="RigidBody3D" parent="."]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 0, 1.1226, 0)
+script = ExtResource("1_ofuqu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Thruster4"]
+shape = SubResource("BoxShape3D_t3mnu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Thruster4"]
+mesh = SubResource("QuadMesh_hyx4n")
+skeleton = NodePath("")
+
+[node name="ThrusterComponent" type="Node" parent="Thruster4"]
+script = ExtResource("2_n6nma")
+thrust_amount = 5.0
 activation_input = SubResource("InputEventKey_ir52r")
 
 [node name="Thruster2" type="RigidBody3D" parent="."]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.451951, 0.195393, 0)
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, -0.451951, 0.558291, 0)
 script = ExtResource("1_ofuqu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Thruster2"]
+transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_t3mnu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Thruster2"]
@@ -91,13 +140,15 @@ skeleton = NodePath("")
 
 [node name="ThrusterComponent" type="Node" parent="Thruster2"]
 script = ExtResource("2_n6nma")
+thrust_amount = 8.0
 activation_input = SubResource("InputEventKey_ksvxs")
 
 [node name="Thruster3" type="RigidBody3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.449906, 0.195393, 0)
+transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, 0.449906, 0.558291, 0)
 script = ExtResource("1_ofuqu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Thruster3"]
+transform = Transform3D(0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_t3mnu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Thruster3"]
@@ -106,4 +157,5 @@ skeleton = NodePath("")
 
 [node name="ThrusterComponent" type="Node" parent="Thruster3"]
 script = ExtResource("2_n6nma")
+thrust_amount = 8.0
 activation_input = SubResource("InputEventKey_oxvx7")
