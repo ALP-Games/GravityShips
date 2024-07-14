@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://sn4awfmbnnm2"]
+
+[ext_resource type="Script" path="res://scripts/ship_part.gd" id="1_sxw7p"]
+
+[node name="ShipPart" type="RigidBody3D"]
+script = ExtResource("1_sxw7p")

@@ -11,5 +11,17 @@ config_version=5
 [application]
 
 config/name="GravityShips"
+run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
+[physics]
+
+3d/physics_engine="JoltPhysics3D"
+3d/default_gravity=2.08165e-12
+3d/default_gravity_vector=Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
