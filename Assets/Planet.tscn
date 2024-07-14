@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://crfdm5jebca44"]
+
+[ext_resource type="Texture2D" uid="uid://oqo8cc6wke2t" path="res://Textures/Planet/Planet_dif.png" id="1_umloa"]
+[ext_resource type="Texture2D" uid="uid://hu1yl0nk02ah" path="res://Textures/Planet/Planet_occlusion.png" id="2_lq0jd"]
+[ext_resource type="Texture2D" uid="uid://dg75k0e4cy086" path="res://Textures/Planet/Planet_height.png" id="2_m47cq"]
+[ext_resource type="Texture2D" uid="uid://coueiy7xra74o" path="res://Textures/Planet/Planet_normals.png" id="4_pfepd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_updcw"]
+transparency = 4
+specular_mode = 2
+disable_fog = true
+albedo_texture = ExtResource("1_umloa")
+normal_enabled = true
+normal_texture = ExtResource("4_pfepd")
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource("2_lq0jd")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_m47cq")
+refraction_scale = -0.65
+
+[sub_resource type="QuadMesh" id="QuadMesh_vsxvr"]
+material = SubResource("StandardMaterial3D_updcw")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kqexp"]
+radius = 0.421822
+
+[node name="Node3D" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("QuadMesh_vsxvr")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_kqexp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.227587, -0.795057, 0.562218, 0.297445, 0.606535, 0.737321, -0.927217, -0.000575361, 0.374525, -1.08192, 0.17221, 0)

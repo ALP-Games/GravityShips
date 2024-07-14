@@ -1,0 +1,46 @@
+[gd_scene load_steps=11 format=3 uid="uid://cjgi7drajvij2"]
+
+[ext_resource type="Texture2D" uid="uid://dtixgkmys661w" path="res://Textures/Ship/Ship_dif.png" id="1_fcgqe"]
+[ext_resource type="Texture2D" uid="uid://slhayjbekahe" path="res://Textures/Ship/Ship_occlusion.png" id="2_snyx6"]
+[ext_resource type="Texture2D" uid="uid://dhrt6s3enyamn" path="res://Textures/Ship/Ship_emissive.png" id="3_vgjg8"]
+[ext_resource type="Texture2D" uid="uid://d2r8dr8aj2yh4" path="res://Textures/Ship/Ship_height.png" id="4_13nvi"]
+[ext_resource type="Texture2D" uid="uid://eef5u2s7ns2v" path="res://Textures/Ship/Ship_metalness.png" id="5_7shbp"]
+[ext_resource type="Texture2D" uid="uid://cym54ow4iq6bs" path="res://Textures/Ship/Ship_normals.png" id="6_ukwae"]
+[ext_resource type="Texture2D" uid="uid://dfsol50enfjbu" path="res://Textures/Ship/Ship_roughness.png" id="7_skb6m"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pqg8j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2b6b6"]
+transparency = 1
+albedo_texture = ExtResource("1_fcgqe")
+metallic = 1.0
+metallic_texture = ExtResource("5_7shbp")
+roughness_texture = ExtResource("7_skb6m")
+emission_enabled = true
+emission = Color(0.678431, 0.513726, 0, 1)
+emission_energy_multiplier = 8.0
+emission_operator = 1
+emission_texture = ExtResource("3_vgjg8")
+normal_enabled = true
+normal_texture = ExtResource("6_ukwae")
+ao_enabled = true
+ao_texture = ExtResource("2_snyx6")
+heightmap_enabled = true
+heightmap_texture = ExtResource("4_13nvi")
+uv1_scale = Vector3(0.435, 1, 1)
+uv1_offset = Vector3(0.24, 0, 0)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bx86h"]
+material = SubResource("StandardMaterial3D_2b6b6")
+size = Vector2(0.9, 1.795)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("CapsuleShape3D_pqg8j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("PlaneMesh_bx86h")
+skeleton = NodePath("../CollisionShape3D")
