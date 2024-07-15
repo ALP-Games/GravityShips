@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://dg03d2aho0n3x"]
 
-[ext_resource type="Script" path="res://scripts/ship_part.gd" id="1_ofuqu"]
-[ext_resource type="Script" path="res://scripts/components/thruster_component.gd" id="2_n6nma"]
+[ext_resource type="Script" path="res://scripts/3D/ship_part.gd" id="1_ofuqu"]
+[ext_resource type="Script" path="res://scripts/3D/components/thruster_component.gd" id="2_n6nma"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lihfu"]
 size = Vector3(0.408, 1.77, 1)

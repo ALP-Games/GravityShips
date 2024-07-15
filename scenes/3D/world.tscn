@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6c6tbb0busjo"]
+
+[ext_resource type="PackedScene" uid="uid://cbtm6si6ignkd" path="res://scenes/3D/rotato_ship.tscn" id="1_4gcyb"]
+[ext_resource type="Script" path="res://scripts/3D/camera.gd" id="2_c0iw7"]
+[ext_resource type="PackedScene" uid="uid://dg03d2aho0n3x" path="res://scenes/3D/player_ship.tscn" id="3_qm7qg"]
+
+[node name="world" type="Node3D"]
+
+[node name="PlayerHull" parent="." instance=ExtResource("1_4gcyb")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 25)
+script = ExtResource("2_c0iw7")
+
+[node name="PlayerHull2" parent="." instance=ExtResource("3_qm7qg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2865, 11.5779, 0)

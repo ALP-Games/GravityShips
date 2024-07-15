@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://sn4awfmbnnm2"]
+[gd_scene load_steps=2 format=3 uid="uid://brsllb7ko73g7"]
 
-[ext_resource type="Script" path="res://scripts/ship_part.gd" id="1_sxw7p"]
+[ext_resource type="Script" path="res://scripts/3D/ship_part.gd" id="1_hyq2j"]
 
 [node name="ShipPart" type="RigidBody3D"]
-script = ExtResource("1_sxw7p")
+script = ExtResource("1_hyq2j")
