@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://iay0xs8gocn4"]
+
+[ext_resource type="Texture2D" uid="uid://ckja2nohb4ddj" path="res://Assets/Textures/Ribs.png" id="1_txsxw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmxfu"]
+size = Vector2(159, 452)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+
+[node name="Chiken" type="Sprite2D" parent="."]
+position = Vector2(23, 15)
+rotation = 0.879646
+texture = ExtResource("1_txsxw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16.5, 23)
+shape = SubResource("RectangleShape2D_tmxfu")
