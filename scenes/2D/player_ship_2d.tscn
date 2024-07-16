@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dulc47anyolxy"]
+[gd_scene load_steps=6 format=3 uid="uid://dulc47anyolxy"]
 
 [ext_resource type="Texture2D" uid="uid://df8g6vilqfr0j" path="res://icon.svg" id="1_xobax"]
+[ext_resource type="Script" path="res://scripts/2D/cannon.gd" id="2_d0ilt"]
 [ext_resource type="Script" path="res://scripts/2D/components/space_movement_component.gd" id="2_qwblu"]
+[ext_resource type="PackedScene" uid="uid://12ntqyponqxc" path="res://scenes/2D/gravity_projectile.tscn" id="3_5kdlm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_16ixk"]
 size = Vector2(96, 128)
@@ -9,12 +11,26 @@ size = Vector2(96, 128)
 [node name="PlayerShip2D" type="RigidBody2D"]
 angular_damp = 0.5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_16ixk")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Body" type="Sprite2D" parent="."]
 scale = Vector2(0.75, 1)
 texture = ExtResource("1_xobax")
+
+[node name="Cannon" type="Node2D" parent="." node_paths=PackedStringArray("spawner")]
+script = ExtResource("2_d0ilt")
+projectile_scene = ExtResource("3_5kdlm")
+spawner = NodePath("Spawner")
+
+[node name="Spawner" type="Node2D" parent="Cannon"]
+position = Vector2(128, 2.08165e-12)
+
+[node name="CannonSprite" type="Sprite2D" parent="Cannon"]
+modulate = Color(1, 0.6, 0, 1)
+position = Vector2(64, 2.08165e-12)
+scale = Vector2(1, 0.3)
+texture = ExtResource("1_xobax")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_16ixk")
 
 [node name="SpaceMovementComponent" type="Node" parent="."]
 script = ExtResource("2_qwblu")
