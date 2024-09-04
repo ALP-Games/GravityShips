@@ -11,20 +11,57 @@ size = Vector2(90, 90)
 mass = 0.01
 gravity_scale = 1.66533e-16
 
-[node name="GravityProjectile2" type="Area2D" parent="."]
+[node name="ProjectileShape" type="Node2D" parent="."]
+
+[node name="GravityFieldFront" type="Area2D" parent="ProjectileShape"]
+scale = Vector2(0.5, 1)
 gravity_space_override = 1
 gravity_point_center = Vector2(1, 2.08165e-12)
 gravity_direction = Vector2(1, 2.08165e-12)
 gravity = 2000.0
 
-[node name="Sprite2D" type="Sprite2D" parent="GravityProjectile2"]
+[node name="Sprite2D" type="Sprite2D" parent="ProjectileShape/GravityFieldFront"]
 modulate = Color(0.211765, 1, 0.329412, 0.380392)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_afbw1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GravityProjectile2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProjectileShape/GravityFieldFront"]
 shape = SubResource("RectangleShape2D_crfqp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="GravityFieldLeft" type="Area2D" parent="ProjectileShape"]
+position = Vector2(-19.485, -72.73)
+rotation = -0.523599
+scale = Vector2(0.5, 1)
+gravity_space_override = 1
+gravity_point_center = Vector2(1, 2.08165e-12)
+gravity_direction = Vector2(1, 2.08165e-12)
+gravity = 2000.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ProjectileShape/GravityFieldLeft"]
+modulate = Color(0.211765, 1, 0.329412, 0.380392)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_afbw1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProjectileShape/GravityFieldLeft"]
+shape = SubResource("RectangleShape2D_crfqp")
+
+[node name="GravityFieldRight" type="Area2D" parent="ProjectileShape"]
+position = Vector2(-19.485, 72.73)
+rotation = 0.523599
+scale = Vector2(0.5, 1)
+gravity_space_override = 1
+gravity_point_center = Vector2(1, 2.08165e-12)
+gravity_direction = Vector2(1, 2.08165e-12)
+gravity = 2000.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ProjectileShape/GravityFieldRight"]
+modulate = Color(0.211765, 1, 0.329412, 0.380392)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_afbw1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProjectileShape/GravityFieldRight"]
+shape = SubResource("RectangleShape2D_crfqp")
+
+[node name="ProjectileCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_wttal")
 disabled = true

@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cac7ph6w46w1q"]
+[gd_scene load_steps=7 format=3 uid="uid://cac7ph6w46w1q"]
 
+[ext_resource type="Script" path="res://scripts/2D/input/player_input.gd" id="1_empl5"]
 [ext_resource type="PackedScene" uid="uid://dulc47anyolxy" path="res://scenes/2D/player_ship_2d.tscn" id="1_kln4i"]
 [ext_resource type="Script" path="res://scripts/2D/camera_2d.gd" id="2_28y41"]
 [ext_resource type="Texture2D" uid="uid://df8g6vilqfr0j" path="res://icon.svg" id="3_4ddml"]
@@ -8,13 +9,16 @@
 
 [node name="world2d" type="Node2D"]
 
-[node name="PlayerShip2D" parent="." instance=ExtResource("1_kln4i")]
-position = Vector2(934, 517)
+[node name="PlayerInput" type="Node2D" parent="."]
+script = ExtResource("1_empl5")
+
+[node name="PlayerShip2D" parent="PlayerInput" instance=ExtResource("1_kln4i")]
+position = Vector2(761, 541)
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
-zoom = Vector2(0.4, 0.4)
+zoom = Vector2(0.15, 0.15)
 script = ExtResource("2_28y41")
-target = NodePath("../PlayerShip2D")
+target = NodePath("../PlayerInput/PlayerShip2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0.666667, 0, 1)

@@ -19,5 +19,4 @@ shape = SubResource("RectangleShape2D_tmxfu")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(-11.9886, 17.2724)
 rotation = -1.55509
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_tmxfu")
