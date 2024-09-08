@@ -8,22 +8,26 @@ class_name SpaceMovementComponent extends AbstractComponent
 @export var stop_angular_amount: float = 1000000
 
 var _parent: RigidBody2D = null
+var _input_collection: InputCollection = null
 
 
 static func component_name() -> StringName:
 	return &"SpaceMovementComponent"
 
 
-func _ready():
+func _enter_tree() -> void:
+	super()
 	_parent = get_parent()
+	assert(_parent.has_meta(InputCollection.meta_key()), "Space movement controller requires Input collection !")
+	_input_collection = _parent.get_meta(InputCollection.meta_key())
 
 
-func _physics_process(delta):
+func _physics_process(delta) -> void:
 	# move to controller component
-	var thrust_input := Input.is_action_pressed("thrust")
-	var reverse_input := Input.is_action_pressed("reverse")
-	var stop_input := Input.is_action_pressed("stop")
-	var rotation := Input.get_axis("rot_left", "rot_right")
+	var thrust_input := _input_collection.get_thrust_input()
+	var reverse_input := _input_collection.get_reverse_input()
+	var stop_input := _input_collection.get_stop_input()
+	var rotation := _input_collection.get_rotation_input()
 	
 	if thrust_input:
 		_parent.apply_central_force(Vector2.UP.rotated(_parent.rotation) *\

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfxn1r1wnphno"]
+
+[ext_resource type="Texture2D" uid="uid://df8g6vilqfr0j" path="res://icon.svg" id="1_l55ln"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgfrf"]
+size = Vector2(130, 128)
+
+[node name="BadDebris" type="RigidBody2D"]
+can_sleep = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("1_l55ln")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dgfrf")
