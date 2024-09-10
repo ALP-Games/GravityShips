@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cpt83iy0ogc70"]
 
-[ext_resource type="Texture2D" uid="uid://ersbnhrnsfnn" path="res://Assets/Textures/StopSign.png" id="1_dd62l"]
+[ext_resource type="Texture2D" uid="uid://ersbnhrnsfnn" path="res://assets/Textures/StopSign.png" id="1_dd62l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmxfu"]
 size = Vector2(562.883, 189.181)

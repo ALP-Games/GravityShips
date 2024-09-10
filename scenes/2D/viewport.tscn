@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://cac7ph6w46w1q"]
+
+[ext_resource type="Script" path="res://scripts/2D/viewport.gd" id="1_5eiy3"]
+[ext_resource type="PackedScene" uid="uid://y2n0xfydeblx" path="res://scenes/2D/world_2d.tscn" id="1_qyg5f"]
+[ext_resource type="Shader" path="res://shaders/amd_fsr_cas.gdshader" id="3_yswkt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iulh0"]
+shader = ExtResource("3_yswkt")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_uhdyo"]
+viewport_path = NodePath("SubViewport")
+
+[node name="viewport" type="Node2D" node_paths=PackedStringArray("slider")]
+script = ExtResource("1_5eiy3")
+slider = NodePath("CanvasLayer/HSlider")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+handle_input_locally = false
+gui_snap_controls_to_pixels = false
+canvas_cull_mask = 4293918721
+size = Vector2i(5120, 2880)
+
+[node name="world_2d" parent="SubViewport" instance=ExtResource("1_qyg5f")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_iulh0")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("ViewportTexture_uhdyo")
+expand_mode = 5
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -16.0
+offset_right = 429.0
+grow_vertical = 0
+max_value = 1000.0

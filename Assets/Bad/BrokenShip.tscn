@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bur2nvbwpj35"]
 
-[ext_resource type="Texture2D" uid="uid://c8doa7rdf1ltn" path="res://Assets/Textures/brokenship.png" id="1_ute13"]
+[ext_resource type="Texture2D" uid="uid://c8doa7rdf1ltn" path="res://assets/Textures/brokenship.png" id="1_ute13"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmxfu"]
 size = Vector2(235, 739.94)

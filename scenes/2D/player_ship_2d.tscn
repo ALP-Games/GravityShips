@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://dulc47anyolxy"]
 
-[ext_resource type="Texture2D" uid="uid://bv21ldpa3bcys" path="res://Assets/Textures/SpaceShip.png" id="1_x7ore"]
+[ext_resource type="Texture2D" uid="uid://bv21ldpa3bcys" path="res://assets/Textures/SpaceShip.png" id="1_x7ore"]
 [ext_resource type="Script" path="res://scripts/2D/components/space_movement_component.gd" id="2_qwblu"]
-[ext_resource type="Texture2D" uid="uid://bfd8blyj1nlgd" path="res://Assets/Textures/GravityGun.png" id="4_u5fe4"]
+[ext_resource type="Texture2D" uid="uid://bfd8blyj1nlgd" path="res://assets/Textures/GravityGun.png" id="4_u5fe4"]
 [ext_resource type="Script" path="res://scripts/2D/components/cannon_component.gd" id="6_qxuip"]
 [ext_resource type="PackedScene" uid="uid://smupckxohlhc" path="res://scenes/2D/rigid_projectile.tscn" id="7_5ta40"]
 

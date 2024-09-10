@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://cjgi7drajvij2"]
 
-[ext_resource type="Texture2D" uid="uid://dtixgkmys661w" path="res://Textures/Ship/Ship_dif.png" id="1_fcgqe"]
-[ext_resource type="Texture2D" uid="uid://slhayjbekahe" path="res://Textures/Ship/Ship_occlusion.png" id="2_snyx6"]
-[ext_resource type="Texture2D" uid="uid://dhrt6s3enyamn" path="res://Textures/Ship/Ship_emissive.png" id="3_vgjg8"]
-[ext_resource type="Texture2D" uid="uid://d2r8dr8aj2yh4" path="res://Textures/Ship/Ship_height.png" id="4_13nvi"]
-[ext_resource type="Texture2D" uid="uid://eef5u2s7ns2v" path="res://Textures/Ship/Ship_metalness.png" id="5_7shbp"]
-[ext_resource type="Texture2D" uid="uid://cym54ow4iq6bs" path="res://Textures/Ship/Ship_normals.png" id="6_ukwae"]
-[ext_resource type="Texture2D" uid="uid://dfsol50enfjbu" path="res://Textures/Ship/Ship_roughness.png" id="7_skb6m"]
+[ext_resource type="Texture2D" uid="uid://dtixgkmys661w" path="res://textures/Ship/Ship_dif.png" id="1_fcgqe"]
+[ext_resource type="Texture2D" uid="uid://slhayjbekahe" path="res://textures/Ship/Ship_occlusion.png" id="2_snyx6"]
+[ext_resource type="Texture2D" uid="uid://dhrt6s3enyamn" path="res://textures/Ship/Ship_emissive.png" id="3_vgjg8"]
+[ext_resource type="Texture2D" uid="uid://d2r8dr8aj2yh4" path="res://textures/Ship/Ship_height.png" id="4_13nvi"]
+[ext_resource type="Texture2D" uid="uid://eef5u2s7ns2v" path="res://textures/Ship/Ship_metalness.png" id="5_7shbp"]
+[ext_resource type="Texture2D" uid="uid://cym54ow4iq6bs" path="res://textures/Ship/Ship_normals.png" id="6_ukwae"]
+[ext_resource type="Texture2D" uid="uid://dfsol50enfjbu" path="res://textures/Ship/Ship_roughness.png" id="7_skb6m"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pqg8j"]
 

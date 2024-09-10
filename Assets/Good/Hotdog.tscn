@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bxp7jmshad32m"]
 
-[ext_resource type="Texture2D" uid="uid://ccmcjbkcjxkbx" path="res://Assets/Textures/Hotdog.png" id="1_wyd0c"]
+[ext_resource type="Texture2D" uid="uid://ccmcjbkcjxkbx" path="res://assets/Textures/Hotdog.png" id="1_wyd0c"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w5t70"]
 radius = 88.0

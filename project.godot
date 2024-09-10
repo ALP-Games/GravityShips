@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GravityShips"
-run/main_scene="res://scenes/2D/world_2d.tscn"
+run/main_scene="res://scenes/2D/viewport.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -21,8 +21,9 @@ game_manager="*res://scripts/2D/game_manager.gd"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=2560
+window/size/viewport_height=1440
+window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 

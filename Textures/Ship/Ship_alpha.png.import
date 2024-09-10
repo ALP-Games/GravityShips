@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bahc3ge2411ve"
-path.s3tc="res://.godot/imported/Ship_alpha.png-b962cd2ac376de340333ca6c55323c0b.s3tc.ctex"
+path.s3tc="res://.godot/imported/Ship_alpha.png-2c38c9c349c2dce07ad82937e4d1669a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/Ship/Ship_alpha.png"
-dest_files=["res://.godot/imported/Ship_alpha.png-b962cd2ac376de340333ca6c55323c0b.s3tc.ctex"]
+source_file="res://textures/Ship/Ship_alpha.png"
+dest_files=["res://.godot/imported/Ship_alpha.png-2c38c9c349c2dce07ad82937e4d1669a.s3tc.ctex"]
 
 [params]
 

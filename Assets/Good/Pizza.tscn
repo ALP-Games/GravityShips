@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://38gptdniy42p"]
 
-[ext_resource type="Texture2D" uid="uid://mt73wd7bx7b6" path="res://Assets/Textures/Pizza.png" id="1_w10ae"]
+[ext_resource type="Texture2D" uid="uid://mt73wd7bx7b6" path="res://assets/Textures/Pizza.png" id="1_w10ae"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmxfu"]
 size = Vector2(201, 438)
