@@ -1,42 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://dulc47anyolxy"]
+[gd_scene load_steps=4 format=3 uid="uid://dulc47anyolxy"]
 
-[ext_resource type="Texture2D" uid="uid://bv21ldpa3bcys" path="res://Assets/Textures/SpaceShip.png" id="1_x7ore"]
+[ext_resource type="Texture2D" uid="uid://df8g6vilqfr0j" path="res://icon.svg" id="1_xobax"]
 [ext_resource type="Script" path="res://scripts/2D/components/space_movement_component.gd" id="2_qwblu"]
-[ext_resource type="Texture2D" uid="uid://bfd8blyj1nlgd" path="res://Assets/Textures/GravityGun.png" id="4_u5fe4"]
-[ext_resource type="Script" path="res://scripts/2D/components/cannon_component.gd" id="6_qxuip"]
-[ext_resource type="PackedScene" uid="uid://smupckxohlhc" path="res://scenes/2D/rigid_projectile.tscn" id="7_5ta40"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_16ixk"]
-size = Vector2(432, 1021)
+size = Vector2(96, 128)
 
 [node name="PlayerShip2D" type="RigidBody2D"]
 angular_damp = 0.5
 
-[node name="Body" type="Sprite2D" parent="."]
-texture = ExtResource("1_x7ore")
-
-[node name="Cannon" type="Node2D" parent="."]
-position = Vector2(0, -97)
-
-[node name="Spawner" type="Node2D" parent="Cannon"]
-position = Vector2(204, -2)
-
-[node name="CannonSprite" type="Sprite2D" parent="Cannon"]
-modulate = Color(1, 0.6, 0, 1)
-position = Vector2(63, 19)
-rotation = 1.5708
-texture = ExtResource("4_u5fe4")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -8.5)
 shape = SubResource("RectangleShape2D_16ixk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 1)
+texture = ExtResource("1_xobax")
 
 [node name="SpaceMovementComponent" type="Node" parent="."]
 script = ExtResource("2_qwblu")
-turn_acceleration = 250000.0
-
-[node name="CannonComponent" type="Node" parent="." node_paths=PackedStringArray("cannon_tower", "spawner")]
-script = ExtResource("6_qxuip")
-projectile_scene = ExtResource("7_5ta40")
-cannon_tower = NodePath("../Cannon")
-spawner = NodePath("../Cannon/Spawner")
