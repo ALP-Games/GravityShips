@@ -9,7 +9,6 @@ size = Vector2(172, 233)
 
 [node name="Chiken" type="Sprite2D" parent="."]
 rotation = -0.837758
-scale = Vector2(4.91465, 4.91465)
 texture = ExtResource("1_fq3pt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

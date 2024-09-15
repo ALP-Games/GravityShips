@@ -11,7 +11,6 @@ height = 336.0
 [node name="Hotdog" type="Sprite2D" parent="."]
 position = Vector2(29, 15)
 rotation = 0.837758
-scale = Vector2(4.75985, 4.75985)
 texture = ExtResource("1_wyd0c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
