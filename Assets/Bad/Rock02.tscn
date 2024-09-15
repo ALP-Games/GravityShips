@@ -9,6 +9,7 @@ size = Vector2(269, 278)
 
 [node name="Rock02" type="Sprite2D" parent="."]
 position = Vector2(3, 3)
+scale = Vector2(4.04854, 4.04854)
 texture = ExtResource("1_xu8lq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -10,6 +10,7 @@ size = Vector2(235, 739.94)
 [node name="Brokenship" type="Sprite2D" parent="."]
 position = Vector2(5, 3)
 rotation = 0.359538
+scale = Vector2(5.12194, 5.12194)
 texture = ExtResource("1_ute13")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
