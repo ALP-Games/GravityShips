@@ -13,18 +13,20 @@ size = Vector2(432, 1021)
 angular_damp = 0.5
 
 [node name="Body" type="Sprite2D" parent="."]
+scale = Vector2(4.8684, 4.8684)
 texture = ExtResource("1_x7ore")
 
 [node name="Cannon" type="Node2D" parent="."]
 position = Vector2(0, -97)
 
 [node name="Spawner" type="Node2D" parent="Cannon"]
-position = Vector2(204, -2)
+position = Vector2(97, -2)
 
 [node name="CannonSprite" type="Sprite2D" parent="Cannon"]
 modulate = Color(1, 0.6, 0, 1)
 position = Vector2(63, 19)
 rotation = 1.5708
+scale = Vector2(5.23635, 5.23635)
 texture = ExtResource("4_u5fe4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
