@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct7r6v8dylkk3"]
+
+[ext_resource type="Texture2D" uid="uid://b8rw3xr0shr4i" path="res://Assets/Textures/sandwitch.png" id="1_1k8di"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmxfu"]
+size = Vector2(338, 811)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+
+[node name="Chiken" type="Sprite2D" parent="."]
+rotation = 0.825541
+texture = ExtResource("1_1k8di")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 5.5)
+shape = SubResource("RectangleShape2D_tmxfu")
