@@ -7,7 +7,7 @@ uniform float fxaa_span_max : hint_range(0.0, 8.0) = 8.0;
 
 void fragment() {
     vec2 texel_size = 1.0 / TEXTURE_PIXEL_SIZE;
-    
+
     // Calculate luminance
     vec3 rgb_nw = texture(SCREEN_TEXTURE, FRAGCOORD.xy + (vec2(-1.0, -1.0) * SCREEN_PIXEL_SIZE)).rgb;
     vec3 rgb_ne = texture(SCREEN_TEXTURE, FRAGCOORD.xy + (vec2(1.0, -1.0) * SCREEN_PIXEL_SIZE)).rgb;

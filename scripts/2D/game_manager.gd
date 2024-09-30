@@ -5,7 +5,7 @@ class_name GameManager extends Node
 
 func _ready() -> void:
 	# fps lock 
-	#Engine.max_fps = 60
+	Engine.max_fps = 60
 	pass
 
 
