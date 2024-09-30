@@ -13,4 +13,5 @@ shape = SubResource("RectangleShape2D_64sfp")
 
 [node name="Rock00" type="Sprite2D" parent="."]
 position = Vector2(1, -1)
+scale = Vector2(4.15139, 4.15139)
 texture = ExtResource("1_wrki2")
