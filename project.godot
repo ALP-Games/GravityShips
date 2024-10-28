@@ -58,6 +58,7 @@ stop={
 
 [physics]
 
+common/physics_jitter_fix=0.0
 3d/physics_engine="JoltPhysics3D"
 3d/default_gravity=2.08165e-12
 3d/default_gravity_vector=Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
@@ -65,6 +66,7 @@ stop={
 2d/default_gravity_vector=Vector2(2.08165e-12, 2.08165e-12)
 2d/default_linear_damp=2.08167e-17
 2d/default_angular_damp=2.08167e-17
+common/physics_interpolation=true
 
 [rendering]
 

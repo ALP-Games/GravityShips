@@ -4,8 +4,8 @@ class_name SpaceMovementComponent extends AbstractComponent
 @export var reverse_acceleration: float = 1000
 @export var turn_acceleration: float = 10000
 
-@export var stop_linear_amount: float = 800
-@export var stop_angular_amount: float = 1000000
+@export var stop_linear_amount: float = 2000
+@export var stop_angular_amount: float = 300000
 
 var _parent: RigidBody2D = null
 var _input_collection: InputCollection = null
@@ -44,5 +44,5 @@ func _physics_process(delta) -> void:
 		_parent.apply_central_force(_parent.mass * -_parent.linear_velocity.normalized() *\
 			clampf(_parent.linear_velocity.length() / delta, 0, stop_linear_amount))
 		
-		_parent.apply_torque(_parent.mass *\
-			-clampf(_parent.angular_velocity * 5000, -stop_angular_amount, stop_angular_amount))
+		var torque_direction = -1 if _parent.angular_velocity >= 0 else 1
+		_parent.apply_torque(_parent.mass * torque_direction * stop_angular_amount)
