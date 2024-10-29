@@ -13,6 +13,7 @@ size = Vector2(432, 1021)
 angular_damp = 0.5
 
 [node name="Body" type="Sprite2D" parent="."]
+texture_filter = 2
 scale = Vector2(4.8684, 4.8684)
 texture = ExtResource("1_x7ore")
 
