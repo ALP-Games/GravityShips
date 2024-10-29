@@ -1,4 +1,4 @@
-extends Node2D
+class_name CustomViewport extends Node2D
 
 const RENDER_SCALE_MAX: float = 10.0
 const RENDER_SCALE_MIN: float = 0.1
@@ -7,6 +7,7 @@ const RENDER_SCALE_MIN: float = 0.1
 @export var slider: Slider = null
 
 var viewport: SubViewport = null
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,6 +18,20 @@ func _ready() -> void:
 	assert(viewport, "SubViewport is not present in the children. Add it.")
 	_recalc_resolution()
 	_init_slider()
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouse:
+		#print("MOUSE EVENT FROM VIEWPORT")
+		# there should be a way to localize mouse input
+		var current_resolution := get_viewport_rect().size
+		var localized_pos: Vector2
+		localized_pos.x = remap(event.position.x, 0, current_resolution.x, 0, viewport.size.x)
+		localized_pos.y = remap(event.position.y, 0, current_resolution.y, 0, viewport.size.y)
+		#var localized_pos = viewport.size .get_screen_transform().basis_xform(event.position)
+		var sub_event: InputEventMouse = event.duplicate()
+		sub_event.position = localized_pos
+		viewport.push_input(sub_event)
 
 
 func _recalc_resolution() -> void:
