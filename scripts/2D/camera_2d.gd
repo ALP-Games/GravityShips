@@ -11,7 +11,7 @@ func _ready() -> void:
 	recalc_camera_zoom()
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if target:
 		global_position = target.global_position
 

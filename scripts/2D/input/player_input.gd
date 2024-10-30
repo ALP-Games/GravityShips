@@ -15,7 +15,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			#game_manager.get_world_ref().add_child(projectile_instance)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	_mouse_position = get_global_mouse_position()
 	_thrust_input = Input.is_action_pressed("thrust")
 	_reverse_input = Input.is_action_pressed("reverse")
@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 	_rotation_input = Input.get_axis("rot_left", "rot_right")
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	call_deferred("_reset_inputs")
 
 

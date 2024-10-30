@@ -21,7 +21,7 @@ func _enter_tree() -> void:
 	_input_collection = _parent.get_meta(InputCollection.meta_key())
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	cannon_tower.look_at(_input_collection.get_mouse_position())
 	if _input_collection.get_shoot_input():
 		var projectile_instance := projectile_scene.instantiate() as RigidProjectile

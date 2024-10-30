@@ -24,7 +24,6 @@ position = Vector2(0, -97)
 position = Vector2(97, -2)
 
 [node name="CannonSprite" type="Sprite2D" parent="Cannon"]
-modulate = Color(1, 0.6, 0, 1)
 position = Vector2(63, 19)
 rotation = 1.5708
 scale = Vector2(5.23635, 5.23635)
