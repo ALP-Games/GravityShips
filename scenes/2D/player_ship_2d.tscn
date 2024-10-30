@@ -6,8 +6,8 @@
 [ext_resource type="Script" path="res://scripts/2D/components/cannon_component.gd" id="6_qxuip"]
 [ext_resource type="PackedScene" uid="uid://smupckxohlhc" path="res://scenes/2D/rigid_projectile.tscn" id="7_5ta40"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_16ixk"]
-size = Vector2(432, 1021)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gw0bl"]
+size = Vector2(175, 450)
 
 [node name="PlayerShip2D" type="RigidBody2D"]
 angular_damp = 0.5
@@ -30,9 +30,19 @@ rotation = 1.5708
 scale = Vector2(5.23635, 5.23635)
 texture = ExtResource("4_u5fe4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -8.5)
-shape = SubResource("RectangleShape2D_16ixk")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-132, -453, 0, -510, 132, -453, 180, 432, 0, 505, -180, 432)
+
+[node name="LeftEngineCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-213, 216)
+rotation = -0.226141
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_gw0bl")
+
+[node name="RightEngineCollision" type="CollisionShape2D" parent="."]
+position = Vector2(213, 216)
+rotation = 0.226893
+shape = SubResource("RectangleShape2D_gw0bl")
 
 [node name="SpaceMovementComponent" type="Node" parent="."]
 script = ExtResource("2_qwblu")
