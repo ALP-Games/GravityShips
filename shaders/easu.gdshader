@@ -124,16 +124,16 @@ void FsrEasuSetF(
 void fragment() {
 	vec3 c;
     vec4 con0,con1,con2,con3;
-    
+
     // "rendersize" refers to size of source image before upscaling.
     vec2 rendersize = vec2(1.0)/TEXTURE_PIXEL_SIZE;
     vec2 iResolution = vec2(1.0)/TEXTURE_PIXEL_SIZE; //TODO
     FsrEasuCon(
         con0, con1, con2, con3, rendersize, rendersize, iResolution.xy
     );
-	
+
 	vec2 ip = (UV/TEXTURE_PIXEL_SIZE);
-	
+
     //------------------------------------------------------------------------------------------------------------------------------
     // Get position of 'f'.
     vec2 pp = ip * con0.xy + con0.zw; // Corresponding input pixel/subpixel
@@ -150,7 +150,7 @@ void fragment() {
     //  a b
     //  r g
     vec2 p0 = fp * con1.xy + con1.zw;
-    
+
     // These are from p0 to avoid pulling two constants on pre-Navi hardware.
     vec2 p1 = p0 + con2.xy;
     vec2 p2 = p0 + con2.zw;
@@ -172,7 +172,7 @@ void fragment() {
     vec3 gC = texture(TEXTURE, (p2 + off.xz)).rgb; float gL = gC.g + 0.5 *(gC.r + gC.b);
     vec3 oC = texture(TEXTURE, (p3 + off.yz)).rgb; float oL = oC.g + 0.5 *(oC.r + oC.b);
     vec3 nC = texture(TEXTURE, (p3 + off.xz)).rgb; float nL = nC.g + 0.5 *(nC.r + nC.b);
-   
+
     //------------------------------------------------------------------------------------------------------------------------------
     // Simplest multi-channel approximate luma possible (luma times 2, in 2 FMA/MAD).
     // Accumulate for bilinear interpolation.
@@ -234,6 +234,6 @@ void fragment() {
     //------------------------------------------------------------------------------------------------------------------------------
     // Normalize and dering.
     vec3 pix=min(max4,max(min4,aC/aW));
-	
+
 	COLOR.rgb = pix.rgb;
 }
