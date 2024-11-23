@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://coueiy7xra74o"
-path.s3tc="res://.godot/imported/Planet_normals.png-ebfa40dd563e38943324a74e92c7884b.s3tc.ctex"
+path.s3tc="res://.godot/imported/Planet_normals.png-ef0e769a8cf4dce822ce75a40110cef5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/Planet/Planet_normals.png"
-dest_files=["res://.godot/imported/Planet_normals.png-ebfa40dd563e38943324a74e92c7884b.s3tc.ctex"]
+source_file="res://Textures/Planet/Planet_normals.png"
+dest_files=["res://.godot/imported/Planet_normals.png-ef0e769a8cf4dce822ce75a40110cef5.s3tc.ctex"]
 
 [params]
 
