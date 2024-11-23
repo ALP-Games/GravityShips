@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://y2n0xfydeblx"]
+[gd_scene load_steps=24 format=3 uid="uid://y2n0xfydeblx"]
 
 [ext_resource type="Script" path="res://scripts/2D/input/player_input.gd" id="1_empl5"]
 [ext_resource type="Texture2D" uid="uid://drtun5hvsjfx6" path="res://Assets/Textures/Background.png" id="1_g1w3a"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://jhmr1gxtv3q2" path="res://Assets/Bad/Rock00.tscn" id="17_wabb5"]
 [ext_resource type="PackedScene" uid="uid://bur2nvbwpj35" path="res://Assets/Bad/BrokenShip.tscn" id="18_8qq2r"]
 [ext_resource type="Shader" path="res://shaders/gravity_distortion.gdshader" id="20_fvxe0"]
+[ext_resource type="Script" path="res://scripts/2D/gravit_distortion_canvas.gd" id="21_nwsf6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_alwav"]
 shader = ExtResource("1_ieg1v")
@@ -28,15 +29,18 @@ shader_parameter/speed = 0.25
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s3br3"]
 shader = ExtResource("20_fvxe0")
 shader_parameter/gravity_point = Vector2(0.5, 0.5)
-shader_parameter/radius = 0.5
-shader_parameter/ring_thickness = 0.05
+shader_parameter/radius = 0.08
+shader_parameter/offset = 0.3
+shader_parameter/factor = 500.0
+shader_parameter/wave_color_intensity = 0.075
+shader_parameter/ring_density = 100.0
+shader_parameter/gravity_speed = 8.0
 
 [node name="world_2d" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-visible = false
 motion_scale = Vector2(0.25, 0.25)
 motion_mirroring = Vector2(12800, 12800)
 
@@ -103,7 +107,7 @@ position = Vector2(-37, -23)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="GravityDistortion" type="ColorRect" parent="CanvasLayer" node_paths=PackedStringArray("gravity_source")]
 material = SubResource("ShaderMaterial_s3br3")
 anchors_preset = 15
 anchor_right = 1.0
@@ -111,3 +115,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("21_nwsf6")
+gravity_source = NodePath("../../HungryPlanet")
