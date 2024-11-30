@@ -30,19 +30,35 @@ func _physics_process(delta) -> void:
 	var rotation := _input_collection.get_rotation_input()
 	
 	if thrust_input:
-		_parent.apply_central_force(Vector2.UP.rotated(_parent.rotation) *\
-									thrust_acceleration * _parent.mass)
+		var desired_direction := Vector2.UP.rotated(_parent.rotation)
+		var negative_acceleration := -(_parent.linear_velocity.normalized() - desired_direction) * thrust_acceleration as Vector2
+		var force_to_apply := (desired_direction * thrust_acceleration * _parent.mass) + (negative_acceleration * _parent.mass)
+		_parent.apply_central_force(force_to_apply)
 	
 	if reverse_input:
-		_parent.apply_central_force(Vector2.DOWN.rotated(_parent.rotation) *\
-									reverse_acceleration * _parent.mass)
+		var desired_direction := Vector2.DOWN.rotated(_parent.rotation)
+		var negative_acceleration := -(_parent.linear_velocity.normalized() - desired_direction) * reverse_acceleration as Vector2
+		var force_to_apply := (desired_direction * reverse_acceleration * _parent.mass) + (negative_acceleration * _parent.mass)
+		_parent.apply_central_force(force_to_apply)
+	
 	
 	if rotation:
-		_parent.apply_torque(rotation * turn_acceleration * _parent.mass)
+		# Maybe body direct state should be retrieved only once
+		var inverse_inertia := PhysicsServer2D.body_get_direct_state(_parent.get_rid()).inverse_inertia
+		print("Applied torque - ", rotation * turn_acceleration / inverse_inertia)
+		_parent.apply_torque(rotation * turn_acceleration / inverse_inertia)
+	else:
+		var inverse_inertia := PhysicsServer2D.body_get_direct_state(_parent.get_rid()).inverse_inertia
+		if inverse_inertia != 0:
+			var reverse_angular_acceleration := -_parent.angular_velocity / delta as float
+			reverse_angular_acceleration = clamp(reverse_angular_acceleration, -turn_acceleration, turn_acceleration)
+			_parent.apply_torque(reverse_angular_acceleration / inverse_inertia)
 
 	if stop_input:
-		_parent.apply_central_force(_parent.mass * -_parent.linear_velocity.normalized() *\
-			clampf(_parent.linear_velocity.length() / delta, 0, stop_linear_amount))
+		var negative_acceleration := -_parent.linear_velocity.normalized() * stop_linear_amount
+		_parent.apply_central_force(_parent.mass * negative_acceleration)
 		
-		var torque_direction = -1 if _parent.angular_velocity >= 0 else 1
-		_parent.apply_torque(_parent.mass * torque_direction * stop_angular_amount)
+		var inverse_inertia = PhysicsServer2D.body_get_direct_state(_parent.get_rid()).inverse_inertia
+		var reverse_angular_acceleration := -_parent.angular_velocity / delta as float
+		reverse_angular_acceleration = clamp(reverse_angular_acceleration, -stop_angular_amount, stop_angular_amount)
+		_parent.apply_torque(reverse_angular_acceleration / inverse_inertia)

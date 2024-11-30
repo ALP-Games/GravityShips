@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://b1l4wtxwjyefk" path="res://scenes/2D/hungry_planet.tscn" id="17_u5f3p"]
 [ext_resource type="PackedScene" uid="uid://jhmr1gxtv3q2" path="res://Assets/Bad/Rock00.tscn" id="17_wabb5"]
 [ext_resource type="PackedScene" uid="uid://bur2nvbwpj35" path="res://Assets/Bad/BrokenShip.tscn" id="18_8qq2r"]
-[ext_resource type="Shader" path="res://shaders/gravity_distortion.gdshader" id="20_fvxe0"]
+[ext_resource type="Shader" path="res://shaders/gravity_waves.gdshader" id="20_83ql3"]
 [ext_resource type="Script" path="res://scripts/2D/gravit_distortion_canvas.gd" id="21_nwsf6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_alwav"]
@@ -27,12 +27,12 @@ shader = ExtResource("1_ieg1v")
 shader_parameter/speed = 0.25
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s3br3"]
-shader = ExtResource("20_fvxe0")
+shader = ExtResource("20_83ql3")
 shader_parameter/gravity_point = Vector2(0.5, 0.5)
 shader_parameter/radius = 0.08
 shader_parameter/offset = 0.3
 shader_parameter/factor = 500.0
-shader_parameter/wave_color_intensity = 0.075
+shader_parameter/wave_color_intensity = 0.015
 shader_parameter/ring_density = 100.0
 shader_parameter/gravity_speed = 8.0
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b1l4wtxwjyefk"]
 
-[ext_resource type="Texture2D" uid="uid://5ahxu8haude2" path="res://assets/Textures/Planet01.png" id="1_qomdf"]
-[ext_resource type="Texture2D" uid="uid://dwbpay16phnwq" path="res://assets/Textures/Planet00.png" id="2_kyikj"]
+[ext_resource type="Texture2D" uid="uid://5ahxu8haude2" path="res://Assets/Textures/Planet01.png" id="1_qomdf"]
+[ext_resource type="Texture2D" uid="uid://dwbpay16phnwq" path="res://Assets/Textures/Planet00.png" id="2_kyikj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sne5q"]
 animations = [{
@@ -21,6 +21,7 @@ animations = [{
 radius = 516.53
 
 [node name="HungryPlanet" type="RigidBody2D"]
+mass = 10000.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_sne5q")
