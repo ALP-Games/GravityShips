@@ -21,6 +21,8 @@ gravity_fields = [NodePath("ProjectileShape/GravityFieldFront"), NodePath("Proje
 
 [node name="GravityFieldFront" type="Area2D" parent="ProjectileShape"]
 scale = Vector2(0.5, 1)
+collision_layer = 4
+collision_mask = 3
 gravity_space_override = 1
 gravity_point_center = Vector2(1, 2.08165e-12)
 gravity_direction = Vector2(1, 2.08165e-12)
@@ -39,6 +41,8 @@ shape = SubResource("RectangleShape2D_crfqp")
 position = Vector2(-19.485, -72.73)
 rotation = -0.523599
 scale = Vector2(0.5, 1)
+collision_layer = 4
+collision_mask = 3
 gravity_space_override = 1
 gravity_point_center = Vector2(0.866, -0.5)
 gravity_direction = Vector2(0.866, -0.5)
@@ -57,6 +61,8 @@ shape = SubResource("RectangleShape2D_crfqp")
 position = Vector2(-19.485, 72.73)
 rotation = 0.523599
 scale = Vector2(0.5, 1)
+collision_layer = 4
+collision_mask = 3
 gravity_space_override = 1
 gravity_point_center = Vector2(0.866, 0.5)
 gravity_direction = Vector2(0.866, 0.5)

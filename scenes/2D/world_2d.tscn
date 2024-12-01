@@ -50,6 +50,9 @@ scale = Vector2(6.25, 6.25)
 texture = ExtResource("1_g1w3a")
 centered = false
 
+[node name="HungryPlanet" parent="." instance=ExtResource("17_u5f3p")]
+position = Vector2(-37, -3421)
+
 [node name="RigidBody2D" parent="." instance=ExtResource("8_cnim0")]
 position = Vector2(-1829, 1080)
 
@@ -101,9 +104,6 @@ zoom = Vector2(0.15, 0.15)
 process_callback = 0
 script = ExtResource("2_28y41")
 target = NodePath("../PlayerInput/PlayerShip2D")
-
-[node name="HungryPlanet" parent="." instance=ExtResource("17_u5f3p")]
-position = Vector2(-37, -23)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

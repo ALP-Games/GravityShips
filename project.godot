@@ -56,6 +56,12 @@ stop={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Default"
+2d_physics/layer_2="Planet"
+2d_physics/layer_3="Projectile"
+
 [physics]
 
 common/physics_jitter_fix=0.0
