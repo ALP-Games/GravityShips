@@ -44,8 +44,7 @@ shape = SubResource("RectangleShape2D_gw0bl")
 
 [node name="SpaceMovementComponent" type="Node" parent="."]
 script = ExtResource("2_qwblu")
-turn_acceleration = 5.0
-stop_angular_amount = 10.0
+max_turn_speed = 3.0
 
 [node name="CannonComponent" type="Node" parent="." node_paths=PackedStringArray("cannon_tower", "spawner")]
 script = ExtResource("6_qxuip")

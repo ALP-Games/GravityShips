@@ -2,10 +2,11 @@ class_name SpaceMovementComponent extends AbstractComponent
 
 @export var thrust_acceleration: float = 1500
 @export var reverse_acceleration: float = 1000
-@export var turn_acceleration: float = 10000
+@export var turn_acceleration: float = 5
+@export var max_turn_speed: float = 2.0
 
 @export var stop_linear_amount: float = 2000
-@export var stop_angular_amount: float = 300000
+@export var stop_angular_amount: float = 10
 
 var _parent: RigidBody2D = null
 var _input_collection: InputCollection = null
@@ -45,8 +46,8 @@ func _physics_process(delta) -> void:
 	if rotation:
 		# Maybe body direct state should be retrieved only once
 		var inverse_inertia := PhysicsServer2D.body_get_direct_state(_parent.get_rid()).inverse_inertia
-		print("Applied torque - ", rotation * turn_acceleration / inverse_inertia)
-		_parent.apply_torque(rotation * turn_acceleration / inverse_inertia)
+		var acceleration_defficit = (max_turn_speed - absf(_parent.angular_velocity)) / delta
+		_parent.apply_torque(rotation * clamp(turn_acceleration, -acceleration_defficit, acceleration_defficit) / inverse_inertia)
 	else:
 		var inverse_inertia := PhysicsServer2D.body_get_direct_state(_parent.get_rid()).inverse_inertia
 		if inverse_inertia != 0:
