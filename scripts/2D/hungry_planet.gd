@@ -1,6 +1,7 @@
 class_name HungryPlanet extends RigidBody2D
 
 @onready var mouth: Area2D = $Mouth
+@onready var center_blocker: StaticBody2D = $CenterOfGravityBlocker
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,5 +14,5 @@ func _process(delta) -> void:
 
 
 func _body_entered_mouth(node: Node2D) -> void:
-	if node != self:
+	if node != self and node != center_blocker:
 		node.queue_free()
