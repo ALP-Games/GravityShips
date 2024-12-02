@@ -15,4 +15,7 @@ func _process(delta) -> void:
 
 func _body_entered_mouth(node: Node2D) -> void:
 	if node != self and node != center_blocker:
-		node.queue_free()
+		var eat := func (component: DestructionComponent):
+			component.destroy()
+		Component.invoke_on_component(DestructionComponent, node, eat)
+		#node.queue_free()

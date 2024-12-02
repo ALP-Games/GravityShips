@@ -1,4 +1,4 @@
-class_name CannonComponent extends AbstractComponent
+class_name CannonComponent extends Component
 
 
 @export var projectile_scene: PackedScene

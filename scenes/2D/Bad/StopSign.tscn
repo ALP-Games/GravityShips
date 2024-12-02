@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpt83iy0ogc70"]
+[gd_scene load_steps=4 format=3 uid="uid://cpt83iy0ogc70"]
 
-[ext_resource type="Texture2D" uid="uid://ersbnhrnsfnn" path="res://assets/Textures/StopSign.png" id="1_dd62l"]
+[ext_resource type="Texture2D" uid="uid://ersbnhrnsfnn" path="res://Assets/Textures/StopSign.png" id="1_dd62l"]
+[ext_resource type="Script" path="res://scripts/2D/components/destruction_component.gd" id="2_abvr3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmxfu"]
 size = Vector2(562.883, 189.181)
@@ -17,3 +18,6 @@ texture = ExtResource("1_dd62l")
 position = Vector2(-12, -7)
 rotation = -1.55509
 shape = SubResource("RectangleShape2D_tmxfu")
+
+[node name="DestructionComponent" type="Node" parent="."]
+script = ExtResource("2_abvr3")

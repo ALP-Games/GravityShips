@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://8tycl7lq8ccc"]
+[gd_scene load_steps=4 format=3 uid="uid://8tycl7lq8ccc"]
 
 [ext_resource type="Texture2D" uid="uid://df8g6vilqfr0j" path="res://icon.svg" id="1_8wchu"]
+[ext_resource type="Script" path="res://scripts/2D/components/destruction_component.gd" id="2_3b2ds"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dgfrf"]
 size = Vector2(130, 128)
@@ -14,3 +15,6 @@ texture = ExtResource("1_8wchu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dgfrf")
+
+[node name="DestructionComponent" type="Node" parent="."]
+script = ExtResource("2_3b2ds")

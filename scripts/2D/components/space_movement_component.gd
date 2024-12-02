@@ -1,4 +1,4 @@
-class_name SpaceMovementComponent extends AbstractComponent
+class_name SpaceMovementComponent extends Component
 
 @export var thrust_acceleration: float = 1500
 @export var reverse_acceleration: float = 1000

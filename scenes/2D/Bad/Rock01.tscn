@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0njo6udmadq"]
+[gd_scene load_steps=4 format=3 uid="uid://c0njo6udmadq"]
 
-[ext_resource type="Texture2D" uid="uid://btgpkt341ixa1" path="res://assets/Textures/Rock01.png" id="1_8uj24"]
+[ext_resource type="Texture2D" uid="uid://btgpkt341ixa1" path="res://Assets/Textures/Rock01.png" id="1_8uj24"]
+[ext_resource type="Script" path="res://scripts/2D/components/destruction_component.gd" id="2_tvcnd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64sfp"]
 size = Vector2(152, 146)
@@ -15,3 +16,6 @@ texture = ExtResource("1_8uj24")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5, 7)
 shape = SubResource("RectangleShape2D_64sfp")
+
+[node name="DestructionComponent" type="Node" parent="."]
+script = ExtResource("2_tvcnd")

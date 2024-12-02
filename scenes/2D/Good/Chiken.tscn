@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://d11uklwbh7mnm"]
+[gd_scene load_steps=4 format=3 uid="uid://d11uklwbh7mnm"]
 
-[ext_resource type="Texture2D" uid="uid://ddmnku53r6g42" path="res://assets/Textures/Chiken.png" id="1_mvv6f"]
+[ext_resource type="Texture2D" uid="uid://ddmnku53r6g42" path="res://Assets/Textures/Chiken.png" id="1_mvv6f"]
+[ext_resource type="Script" path="res://scripts/2D/components/destruction_component.gd" id="2_wbagb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmxfu"]
 size = Vector2(172, 368)
@@ -15,3 +16,6 @@ texture = ExtResource("1_mvv6f")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -1)
 shape = SubResource("RectangleShape2D_tmxfu")
+
+[node name="DestructionComponent" type="Node" parent="."]
+script = ExtResource("2_wbagb")

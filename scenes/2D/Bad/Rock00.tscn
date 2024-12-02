@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://jhmr1gxtv3q2"]
+[gd_scene load_steps=4 format=3 uid="uid://jhmr1gxtv3q2"]
 
-[ext_resource type="Texture2D" uid="uid://coh3xspxvimi1" path="res://assets/Textures/Rock00.png" id="1_wrki2"]
+[ext_resource type="Texture2D" uid="uid://coh3xspxvimi1" path="res://Assets/Textures/Rock00.png" id="1_wrki2"]
+[ext_resource type="Script" path="res://scripts/2D/components/destruction_component.gd" id="2_c8jch"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_64sfp"]
 size = Vector2(51, 51)
@@ -15,3 +16,6 @@ shape = SubResource("RectangleShape2D_64sfp")
 position = Vector2(1, -1)
 scale = Vector2(4.15139, 4.15139)
 texture = ExtResource("1_wrki2")
+
+[node name="DestructionComponent" type="Node" parent="."]
+script = ExtResource("2_c8jch")
