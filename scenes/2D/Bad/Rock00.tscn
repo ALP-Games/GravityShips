@@ -7,6 +7,7 @@
 size = Vector2(51, 51)
 
 [node name="RigidBody2D" type="RigidBody2D"]
+mass = 50.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -0.5)

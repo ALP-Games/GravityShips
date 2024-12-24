@@ -19,10 +19,6 @@ func _ready() -> void:
 	#animation_tree.is_playing
 
 
-func _physics_process(delta: float) -> void:
-	print("Current animation - ", animation_player.current_animation)
-
-
 func _on_animation_finished(animation_name: String) -> void:
 	match animation_name:
 		"chomp":

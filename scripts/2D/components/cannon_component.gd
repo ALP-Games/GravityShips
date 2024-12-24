@@ -30,5 +30,5 @@ func _physics_process(_delta: float) -> void:
 		game_manager.get_world_ref().add_child(projectile_instance)
 		projectile_instance.linear_velocity = _parent.linear_velocity
 		projectile_instance.linear_velocity += Vector2.from_angle(cannon_tower.global_rotation) * shot_velocity
-		for gravity_field in projectile_instance.gravity_fields:
-			gravity_field.gravity_direction = gravity_field.gravity_direction.rotated(cannon_tower.global_rotation)
+		#for gravity_field in projectile_instance.gravity_fields:
+			#gravity_field.gravity_direction = gravity_field.gravity_direction.rotated(cannon_tower.global_rotation)
