@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://b1l4wtxwjyefk"]
 
 [ext_resource type="Script" path="res://scripts/2D/hungry_planet.gd" id="1_mjycf"]
-[ext_resource type="Texture2D" uid="uid://5ahxu8haude2" path="res://assets/Textures/Planet01.png" id="1_qomdf"]
-[ext_resource type="Texture2D" uid="uid://dwbpay16phnwq" path="res://assets/Textures/Planet00.png" id="2_kyikj"]
+[ext_resource type="Texture2D" uid="uid://5ahxu8haude2" path="res://Assets/Textures/Planet01.png" id="1_qomdf"]
+[ext_resource type="Texture2D" uid="uid://dwbpay16phnwq" path="res://Assets/Textures/Planet00.png" id="2_kyikj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sne5q"]
 animations = [{
@@ -35,6 +35,37 @@ radius = 440.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_ym0fi"]
 radius = 1044.0
 
+[sub_resource type="Animation" id="Animation_rnu0m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_7ayq7"]
+resource_name = "chomp"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_oydhe"]
 resource_name = "idle"
 length = 0.1
@@ -55,7 +86,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_03ks5"]
 resource_name = "ready"
 length = 0.1
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -67,37 +97,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [1]
-}
-
-[sub_resource type="Animation" id="Animation_7ayq7"]
-resource_name = "chomp"
-length = 0.25
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_rnu0m"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5sf6h"]
@@ -117,7 +116,6 @@ script = ExtResource("1_mjycf")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_sne5q")
 animation = &"hungry"
-autoplay = "hungry"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_8vrp4")
@@ -145,7 +143,6 @@ monitorable = false
 shape = SubResource("CircleShape2D_byg2w")
 
 [node name="Chewable" type="Area2D" parent="."]
-monitoring = false
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Chewable"]

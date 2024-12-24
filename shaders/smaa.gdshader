@@ -11,7 +11,7 @@ void fragment() {
     vec4 tex_right = texture(scene_texture, SCREEN_UV + vec2(SCREEN_PIXEL_SIZE.x, 0.0));
     vec4 tex_up = texture(scene_texture, SCREEN_UV + vec2(0.0, -SCREEN_PIXEL_SIZE.y));
     vec4 tex_down = texture(scene_texture, SCREEN_UV + vec2(0.0, SCREEN_PIXEL_SIZE.y));
-    
+
     // Diagonal samples for corner detection
     vec4 tex_up_left = texture(scene_texture, SCREEN_UV + vec2(-SCREEN_PIXEL_SIZE.x, -SCREEN_PIXEL_SIZE.y));
     vec4 tex_up_right = texture(scene_texture, SCREEN_UV + vec2(SCREEN_PIXEL_SIZE.x, -SCREEN_PIXEL_SIZE.y));
