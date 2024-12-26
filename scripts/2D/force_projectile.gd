@@ -11,7 +11,7 @@ func _ready():
 
 
 func _save_gravity_fields() -> void:
-	_save_gravity_fields_impl(ForceField)
+	_append_array_with_nodes_of_type(ForceField, gravity_fields)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

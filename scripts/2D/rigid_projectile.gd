@@ -17,18 +17,19 @@ func _ready() -> void:
 
 
 func _save_gravity_fields() -> void:
-	_save_gravity_fields_impl(GravityField)
+	_append_array_with_nodes_of_type(GravityField, gravity_fields)
 
 
-func _save_gravity_fields_impl(type: GDScript) -> void:
-	gravity_fields = []
+# Wouldve been perfect if array or return type was templated
+func _append_array_with_nodes_of_type(type: GDScript, array: Array[Variant]) -> void:
 	var children: 		Array[Node] = get_children()
 	var children_next: 	Array[Node] = []
 	while children.size() > 0:
 		for child in children:
 			if is_instance_of(child, type):
-				gravity_fields.append(child)
-			children_next.append_array(child.get_children())
+				array.append(child)
+			else:
+				children_next.append_array(child.get_children())
 		children = children_next
 		children_next = []
 
