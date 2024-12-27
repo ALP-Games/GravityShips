@@ -21,10 +21,11 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_8vrp4"]
 radius = 516.53
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fobjr"]
+radius = 359.76
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_divih"]
 radius = 20000.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_emeeg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_byg2w"]
 radius = 300.0
@@ -120,6 +121,16 @@ animation = &"hungry"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_8vrp4")
 
+[node name="LocalZero" type="Area2D" parent="."]
+gravity_space_override = 3
+gravity_point_center = Vector2(0, 0)
+gravity_direction = Vector2(0, 0)
+gravity = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LocalZero"]
+shape = SubResource("CircleShape2D_fobjr")
+debug_color = Color(0.901125, 0.310521, 0, 0.42)
+
 [node name="Gravity" type="Area2D" parent="."]
 gravity_space_override = 1
 gravity_point = true
@@ -131,28 +142,26 @@ gravity = 1800.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gravity"]
 shape = SubResource("CircleShape2D_divih")
 
-[node name="CenterOfGravityBlocker" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CenterOfGravityBlocker"]
-shape = SubResource("CircleShape2D_emeeg")
-
 [node name="Mouth" type="Area2D" parent="."]
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mouth"]
 shape = SubResource("CircleShape2D_byg2w")
+debug_color = Color(0.745949, 0, 0.134761, 0.42)
 
 [node name="Chewable" type="Area2D" parent="."]
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Chewable"]
 shape = SubResource("CircleShape2D_s4gjn")
+debug_color = Color(0.673967, 0.507153, 0, 0.42)
 
 [node name="CloseToBite" type="Area2D" parent="."]
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CloseToBite"]
 shape = SubResource("CircleShape2D_ym0fi")
+debug_color = Color(0, 0.611765, 0.627451, 0.172549)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
