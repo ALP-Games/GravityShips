@@ -11,7 +11,9 @@ uniform float gravity_speed = 10.;
 
 void fragment()
 {
+	// TODO: have this as uniform and calculate once
 	vec2 aspect = vec2(SCREEN_PIXEL_SIZE.y / SCREEN_PIXEL_SIZE.x, 1.0);
+	// TODO: have this as uniform and calculate once
 	vec2 point = gravity_point * aspect;
 	vec2 screen_space = UV * aspect;
 	float dist = distance(screen_space, point);
