@@ -1,7 +1,7 @@
 class_name HungryPlanet extends RigidBody2D
 
 @onready var mouth: Area2D = $Mouth
-@onready var chewable: Area2D = $Chewable # FIXME: NOT USED, WONT BE USED
+@onready var chewable: Area2D = $Chewable
 @onready var close_to_bite: Area2D = $CloseToBite
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 

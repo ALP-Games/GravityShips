@@ -1,23 +1,23 @@
 shader_type canvas_item;
 
-uniform vec2 origin = vec2(0.0, 0.0);
+// Automatically configurable
+uniform vec2 aspect = vec2(1.0, 1.0);
+uniform vec2 point = vec2(0.5, 0.5);
 uniform float radius = 0.5;
+// Manually configurable
+uniform float intensity = 0.4;
 
 void vertex() {
 	// Called for every vertex the material is visible on.
 }
 
 void fragment() {
-	// TODO: have this as uniform and calculate once
-	vec2 aspect = vec2(SCREEN_PIXEL_SIZE.y / SCREEN_PIXEL_SIZE.x, 1.0);
-	// TODO: have this as uniform and calculate once
-	vec2 point = origin * aspect;
 	vec2 screen_space = UV * aspect;
 	float dist = distance(screen_space, point);
 	if (radius > dist) {
 		discard;
 	}
-	COLOR.rgb *= 0.4;
+	COLOR.rgb *= intensity;
 }
 
 //void light() {
