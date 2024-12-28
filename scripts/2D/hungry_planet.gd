@@ -3,6 +3,7 @@ class_name HungryPlanet extends RigidBody2D
 @onready var mouth: Area2D = $Mouth
 @onready var chewable: Area2D = $Chewable
 @onready var close_to_bite: Area2D = $CloseToBite
+@onready var gravity_field: Area2D = $Gravity
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var chomp_animation_playing: bool = false
@@ -13,10 +14,16 @@ func _ready() -> void:
 	close_to_bite.body_entered.connect(_entered_range)
 	close_to_bite.body_exited.connect(_exited_range)
 	mouth.body_entered.connect(_body_entered_mouth)
+	gravity_field.body_exited.connect(_object_left_gravity_field)
 	animation_player.animation_finished.connect(_on_animation_finished)
 	animation_player.play("idle")
 	#animation_tree.animation_started
 	#animation_tree.is_playing
+
+
+func _object_left_gravity_field(node: Node2D) -> void:
+	# or maybe need to use destruction component since that one might have effects?
+	node.queue_free()
 
 
 func _on_animation_finished(animation_name: String) -> void:
