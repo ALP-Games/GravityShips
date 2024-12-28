@@ -53,7 +53,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_7ayq7"]
 resource_name = "chomp"
-length = 0.25
+length = 0.35
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -86,7 +86,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_03ks5"]
 resource_name = "ready"
-length = 0.1
+length = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
