@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c5bktpccuayl3"
-path="res://.godot/imported/radialCollision.glb-f19fbca08e731aa09793e06ba30f858f.scn"
+path="res://.godot/imported/radialCollision.glb-eeb5fcf5b7fa1238d910d1c3456ce9b0.scn"
 
 [deps]
 
-source_file="res://Assets/radialCollision.glb"
-dest_files=["res://.godot/imported/radialCollision.glb-f19fbca08e731aa09793e06ba30f858f.scn"]
+source_file="res://assets/radialCollision.glb"
+dest_files=["res://.godot/imported/radialCollision.glb-eeb5fcf5b7fa1238d910d1c3456ce9b0.scn"]
 
 [params]
 

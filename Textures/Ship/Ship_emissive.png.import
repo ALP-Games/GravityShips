@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhrt6s3enyamn"
-path.s3tc="res://.godot/imported/Ship_emissive.png-a0df240669fca00c5c3b860be9b61f98.s3tc.ctex"
+path.s3tc="res://.godot/imported/Ship_emissive.png-54d1eb15a1d34c010c6f95be8da95be8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/Ship/Ship_emissive.png"
-dest_files=["res://.godot/imported/Ship_emissive.png-a0df240669fca00c5c3b860be9b61f98.s3tc.ctex"]
+source_file="res://textures/Ship/Ship_emissive.png"
+dest_files=["res://.godot/imported/Ship_emissive.png-54d1eb15a1d34c010c6f95be8da95be8.s3tc.ctex"]
 
 [params]
 

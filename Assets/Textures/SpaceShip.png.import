@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bv21ldpa3bcys"
-path="res://.godot/imported/SpaceShip.png-651ceb95d0807639e442d497dd51c845.ctex"
+path="res://.godot/imported/SpaceShip.png-29103901ffcad9c278dba5a75177b57e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/SpaceShip.png"
-dest_files=["res://.godot/imported/SpaceShip.png-651ceb95d0807639e442d497dd51c845.ctex"]
+source_file="res://assets/Textures/SpaceShip.png"
+dest_files=["res://.godot/imported/SpaceShip.png-29103901ffcad9c278dba5a75177b57e.ctex"]
 
 [params]
 
