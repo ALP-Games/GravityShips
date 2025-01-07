@@ -1,3 +1,6 @@
 [submodule "addons/egine_extension"]
 	path = addons/egine_extension
 	url = git@github.com:ALP-Games/godot_gdscript_extension.git
+[submodule "addons/godot_ui_utilities_gdscript"]
+	path = addons/godot_ui_utilities_gdscript
+	url = git@github.com:ALP-Games/godot_ui_utilities_gdscript.git

@@ -1,7 +1,7 @@
 [gd_scene load_steps=30 format=3 uid="uid://y2n0xfydeblx"]
 
 [ext_resource type="Script" path="res://scripts/2D/input/player_input.gd" id="1_empl5"]
-[ext_resource type="Texture2D" uid="uid://drtun5hvsjfx6" path="res://Assets/Textures/Background.png" id="1_g1w3a"]
+[ext_resource type="Texture2D" uid="uid://drtun5hvsjfx6" path="res://assets/Textures/Background.png" id="1_g1w3a"]
 [ext_resource type="Shader" path="res://shaders/psychodelic.gdshader" id="1_ieg1v"]
 [ext_resource type="PackedScene" uid="uid://dulc47anyolxy" path="res://scenes/2D/player_ship_2d.tscn" id="1_kln4i"]
 [ext_resource type="Script" path="res://scripts/2D/camera_2d.gd" id="2_28y41"]
@@ -23,7 +23,7 @@
 [ext_resource type="Shader" path="res://shaders/gravity_waves.gdshader" id="20_83ql3"]
 [ext_resource type="Script" path="res://scripts/2D/gravit_distortion_canvas.gd" id="21_nwsf6"]
 [ext_resource type="Script" path="res://scripts/2D/negative_radius.gd" id="21_yxd2e"]
-[ext_resource type="PackedScene" uid="uid://cckyu7qykxegu" path="res://addons/egine_extension/UI/FPSCounter/FPSCounter.tscn" id="22_a7wiq"]
+[ext_resource type="PackedScene" uid="uid://cckyu7qykxegu" path="res://addons/godot_ui_utilities_gdscript/FPSCounter/FPSCounter.tscn" id="22_a7wiq"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_5c51y"]
 viewport_path = NodePath("BackgroundViewport")
