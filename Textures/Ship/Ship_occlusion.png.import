@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://slhayjbekahe"
-path.s3tc="res://.godot/imported/Ship_occlusion.png-c9af6be40707f25df421b1e27d6d0861.s3tc.ctex"
+path.s3tc="res://.godot/imported/Ship_occlusion.png-7d732674dd6c4b39fe18442b5bc104ad.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/Ship/Ship_occlusion.png"
-dest_files=["res://.godot/imported/Ship_occlusion.png-c9af6be40707f25df421b1e27d6d0861.s3tc.ctex"]
+source_file="res://textures/ship/Ship_occlusion.png"
+dest_files=["res://.godot/imported/Ship_occlusion.png-7d732674dd6c4b39fe18442b5bc104ad.s3tc.ctex"]
 
 [params]
 
