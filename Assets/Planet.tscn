@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://crfdm5jebca44"]
 
-[ext_resource type="Texture2D" uid="uid://oqo8cc6wke2t" path="res://textures/Planet/Planet_dif.png" id="1_umloa"]
-[ext_resource type="Texture2D" uid="uid://hu1yl0nk02ah" path="res://textures/Planet/Planet_occlusion.png" id="2_lq0jd"]
-[ext_resource type="Texture2D" uid="uid://dg75k0e4cy086" path="res://textures/Planet/Planet_height.png" id="2_m47cq"]
-[ext_resource type="Texture2D" uid="uid://coueiy7xra74o" path="res://textures/Planet/Planet_normals.png" id="4_pfepd"]
+[ext_resource type="Texture2D" uid="uid://oqo8cc6wke2t" path="res://textures/planet/Planet_dif.png" id="1_umloa"]
+[ext_resource type="Texture2D" uid="uid://hu1yl0nk02ah" path="res://textures/planet/Planet_occlusion.png" id="2_lq0jd"]
+[ext_resource type="Texture2D" uid="uid://dg75k0e4cy086" path="res://textures/planet/Planet_height.png" id="2_m47cq"]
+[ext_resource type="Texture2D" uid="uid://coueiy7xra74o" path="res://textures/planet/Planet_normals.png" id="4_pfepd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_updcw"]
 transparency = 4

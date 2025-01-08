@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hu1yl0nk02ah"
-path.s3tc="res://.godot/imported/Planet_occlusion.png-0ad073f07b43f97b93c492820c84a978.s3tc.ctex"
+path.s3tc="res://.godot/imported/Planet_occlusion.png-6ca6bdf78cb4830e5f6d361cc89433b8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/Planet/Planet_occlusion.png"
-dest_files=["res://.godot/imported/Planet_occlusion.png-0ad073f07b43f97b93c492820c84a978.s3tc.ctex"]
+source_file="res://textures/planet/Planet_occlusion.png"
+dest_files=["res://.godot/imported/Planet_occlusion.png-6ca6bdf78cb4830e5f6d361cc89433b8.s3tc.ctex"]
 
 [params]
 
