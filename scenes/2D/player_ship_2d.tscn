@@ -58,7 +58,7 @@ spawner = NodePath("../Cannon/Spawner")
 script = ExtResource("6_cxuu5")
 
 [node name="TrusterVfx" parent="." instance=ExtResource("7_dwvnq")]
-position = Vector2(-153, 576)
+position = Vector2(-153, 540)
 
 [node name="TrusterVfx2" parent="." instance=ExtResource("7_dwvnq")]
-position = Vector2(149, 576)
+position = Vector2(149, 540)
