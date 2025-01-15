@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://iay0xs8gocn4"]
 
-[ext_resource type="Texture2D" uid="uid://ckja2nohb4ddj" path="res://assets/Textures/Ribs.png" id="1_txsxw"]
+[ext_resource type="Texture2D" uid="uid://ckja2nohb4ddj" path="res://Assets/Textures/Ribs.png" id="1_txsxw"]
 [ext_resource type="Script" path="res://scripts/2D/components/destruction_component.gd" id="2_bva3d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmxfu"]

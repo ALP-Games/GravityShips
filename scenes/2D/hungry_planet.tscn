@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/2D/hungry_planet.gd" id="1_mjycf"]
 [ext_resource type="Texture2D" uid="uid://5ahxu8haude2" path="res://Assets/Textures/Planet01.png" id="1_qomdf"]
 [ext_resource type="Texture2D" uid="uid://dwbpay16phnwq" path="res://Assets/Textures/Planet00.png" id="2_kyikj"]
-[ext_resource type="PackedScene" uid="uid://kd8gvjna3bmw" path="res://Assets/thesucklines.tscn" id="4_bmgf5"]
+[ext_resource type="PackedScene" uid="uid://b7cgl8kma8wfo" path="res://Assets/thesucklines.tscn" id="4_bmgf5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sne5q"]
 animations = [{
