@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://dulc47anyolxy"]
+[gd_scene load_steps=9 format=3 uid="uid://dulc47anyolxy"]
 
-[ext_resource type="Texture2D" uid="uid://bv21ldpa3bcys" path="res://assets/Textures/SpaceShip.png" id="1_x7ore"]
+[ext_resource type="Texture2D" uid="uid://bv21ldpa3bcys" path="res://Assets/Textures/SpaceShip.png" id="1_x7ore"]
 [ext_resource type="Script" path="res://scripts/2D/components/space_movement_component.gd" id="2_qwblu"]
-[ext_resource type="Texture2D" uid="uid://bfd8blyj1nlgd" path="res://assets/Textures/GravityGun.png" id="4_u5fe4"]
-[ext_resource type="PackedScene" path="res://scenes/2D/force_projectile.tscn" id="5_wycmi"]
+[ext_resource type="Texture2D" uid="uid://bfd8blyj1nlgd" path="res://Assets/Textures/GravityGun.png" id="4_u5fe4"]
+[ext_resource type="PackedScene" uid="uid://dhv1ts7bgebac" path="res://scenes/2D/force_projectile.tscn" id="5_wycmi"]
 [ext_resource type="Script" path="res://scripts/2D/components/destruction_component.gd" id="6_cxuu5"]
 [ext_resource type="Script" path="res://scripts/2D/components/cannon_component.gd" id="6_qxuip"]
+[ext_resource type="PackedScene" uid="uid://dw1giprgesujo" path="res://Assets/TrusterVfx.tscn" id="7_dwvnq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gw0bl"]
 size = Vector2(175, 450)
@@ -55,3 +56,9 @@ spawner = NodePath("../Cannon/Spawner")
 
 [node name="DestructionComponent" type="Node" parent="."]
 script = ExtResource("6_cxuu5")
+
+[node name="TrusterVfx" parent="." instance=ExtResource("7_dwvnq")]
+position = Vector2(-153, 540)
+
+[node name="TrusterVfx2" parent="." instance=ExtResource("7_dwvnq")]
+position = Vector2(149, 540)
