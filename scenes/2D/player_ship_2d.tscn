@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bv21ldpa3bcys" path="res://assets/Textures/SpaceShip.png" id="1_x7ore"]
 [ext_resource type="Script" path="res://scripts/2D/components/space_movement_component.gd" id="2_qwblu"]
 [ext_resource type="Texture2D" uid="uid://bfd8blyj1nlgd" path="res://assets/Textures/GravityGun.png" id="4_u5fe4"]
-[ext_resource type="PackedScene" uid="uid://dhv1ts7bgebac" path="res://scenes/2D/force_projectile.tscn" id="5_wycmi"]
+[ext_resource type="PackedScene" path="res://scenes/2D/force_projectile.tscn" id="5_wycmi"]
 [ext_resource type="Script" path="res://scripts/2D/components/destruction_component.gd" id="6_cxuu5"]
 [ext_resource type="Script" path="res://scripts/2D/components/cannon_component.gd" id="6_qxuip"]
 

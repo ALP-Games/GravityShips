@@ -3,8 +3,8 @@ class_name DestructionComponent extends Component
 signal on_destroy
 
 
-static func component_name() -> StringName:
-	return &"DestructionComponent"
+static func core() -> ComponentCore:
+	return ComponentCore.new(&"DestructionComponent")
 
 
 func destroy() -> void:

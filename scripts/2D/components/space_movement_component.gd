@@ -12,8 +12,8 @@ var _parent: RigidBody2D = null
 var _input_collection: InputCollection = null
 
 
-static func component_name() -> StringName:
-	return &"SpaceMovementComponent"
+static func core() -> ComponentCore:
+	return ComponentCore.new(&"SpaceMovementComponent")
 
 
 func _enter_tree() -> void:

@@ -37,20 +37,20 @@ func _on_animation_finished(animation_name: String) -> void:
 		"ready":
 			if edible_bodies_in_range > 0:
 				for body in mouth.get_overlapping_bodies():
-					if body != self and Component.get_component(DestructionComponent, body):
+					if body != self and DestructionComponent.core().get_from(body):
 						_chomp_chewable()
 						return
 
 
 func _entered_range(node: Node2D) -> void:
-	if Component.get_component(DestructionComponent, node):
+	if DestructionComponent.core().get_from(node):
 		if edible_bodies_in_range == 0 and not chomp_animation_playing:
 			animation_player.play("ready")
 		edible_bodies_in_range += 1
 
 
 func _exited_range(node: Node2D) -> void:
-	if Component.get_component(DestructionComponent, node):
+	if DestructionComponent.core().get_from(node):
 		_remove_body(true)
 
 
@@ -63,7 +63,7 @@ func _remove_body(play_animation: bool) -> void:
 func _body_entered_mouth(node: Node2D) -> void:
 	if chomp_animation_playing:
 		return
-	if node != self and Component.get_component(DestructionComponent, node):
+	if node != self and DestructionComponent.core().get_from(node):
 		_chomp_chewable()
 
 
@@ -75,4 +75,4 @@ func _chomp_chewable() -> void:
 		var eat := func (component: DestructionComponent):
 			component.destroy()
 			_remove_body(false)
-		Component.invoke_on_component(DestructionComponent, body, eat)
+		DestructionComponent.core().invoke_on_component(body, eat)

@@ -10,8 +10,8 @@ var _input_collection: InputCollection = null
 var _parent: RigidBody2D = null
 
 
-static func component_name() -> StringName:
-	return &"CannonComponent"
+static func core() -> ComponentCore:
+	return ComponentCore.new(&"CannonComponent")
 
 
 func _enter_tree() -> void:

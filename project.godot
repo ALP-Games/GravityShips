@@ -28,6 +28,17 @@ window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/vsync/vsync_mode=0
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_ui_utilities_gdscript/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://addons/godot_extension_core_gdscript/": "blue",
+"res://addons/godot_ui_utilities_gdscript/": "green"
+}
+
 [input]
 
 thrust={
