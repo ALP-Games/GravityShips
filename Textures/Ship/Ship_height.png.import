@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2r8dr8aj2yh4"
-path.s3tc="res://.godot/imported/Ship_height.png-1155edb573b0ca47e1413eed1257f17b.s3tc.ctex"
+path.s3tc="res://.godot/imported/Ship_height.png-70667f48dcb8d60eff13eda934b9dd08.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/ship/Ship_height.png"
-dest_files=["res://.godot/imported/Ship_height.png-1155edb573b0ca47e1413eed1257f17b.s3tc.ctex"]
+source_file="res://Textures/Ship/Ship_height.png"
+dest_files=["res://.godot/imported/Ship_height.png-70667f48dcb8d60eff13eda934b9dd08.s3tc.ctex"]
 
 [params]
 

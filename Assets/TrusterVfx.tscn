@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dw1giprgesujo"]
+[gd_scene load_steps=13 format=3 uid="uid://dw1giprgesujo"]
 
 [ext_resource type="Texture2D" uid="uid://lm3ildkbcsi4" path="res://Assets/Textures/EngineVFXTxt.png" id="1_q833t"]
+[ext_resource type="Texture2D" uid="uid://doubq603fsibq" path="res://Assets/Textures/EngineSmoke.png" id="2_mruv5"]
 
 [sub_resource type="Curve" id="Curve_y5j35"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -50,16 +51,16 @@ point_count = 2
 curve = SubResource("Curve_phwlp")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_w1qrl"]
-direction = Vector3(0, 1, 0)
-spread = 2.022
+velocity_pivot = Vector3(0, 50, 0)
+direction = Vector3(0, 50, 0)
+spread = 18.708
+flatness = 0.225
+initial_velocity_max = 112.9
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = -1.60933e-05
 gravity = Vector3(0, 0, 0)
-linear_accel_min = -32.26
-linear_accel_max = -9.68
 scale_min = 0.5
-scale_max = 0.5
 scale_curve = SubResource("CurveTexture_vhvn5")
-hue_variation_min = -0.27
-hue_variation_max = -0.05
 turbulence_enabled = true
 turbulence_influence_min = 0.0
 turbulence_influence_max = 0.055
@@ -69,6 +70,7 @@ turbulence_initial_displacement_max = 1.49012e-06
 [node name="TrusterVfx" type="Node2D"]
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+visible = false
 amount = 9
 process_material = SubResource("ParticleProcessMaterial_doas8")
 texture = ExtResource("1_q833t")
@@ -78,10 +80,8 @@ speed_scale = 4.23
 trail_lifetime = 0.5
 
 [node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
-modulate = Color(0.47403, 0.872429, 1, 1)
 amount = 3
 process_material = SubResource("ParticleProcessMaterial_w1qrl")
-texture = ExtResource("1_q833t")
-lifetime = 0.5
-speed_scale = 4.88
+texture = ExtResource("2_mruv5")
+speed_scale = 1.65
 explosiveness = 0.06

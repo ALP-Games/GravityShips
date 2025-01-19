@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dg75k0e4cy086"
-path.s3tc="res://.godot/imported/Planet_height.png-f98bfc8a0366e99ce8bad52ce5aea8d1.s3tc.ctex"
+path.s3tc="res://.godot/imported/Planet_height.png-0fc1f1c4f7dadb049235c9089cb34219.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/planet/Planet_height.png"
-dest_files=["res://.godot/imported/Planet_height.png-f98bfc8a0366e99ce8bad52ce5aea8d1.s3tc.ctex"]
+source_file="res://Textures/Planet/Planet_height.png"
+dest_files=["res://.godot/imported/Planet_height.png-0fc1f1c4f7dadb049235c9089cb34219.s3tc.ctex"]
 
 [params]
 
