@@ -1,23 +1,23 @@
 [gd_scene load_steps=4 format=3 uid="uid://b7cgl8kma8wfo"]
 
 [sub_resource type="Curve" id="Curve_lrdyo"]
-_data = [Vector2(0.46, 0), 0.0, 0.0, 0, 0, Vector2(0.573333, 1), 0.0, 0.0, 0, 0, Vector2(0.966667, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0.4, 0), 0.0, 0.0, 0, 0, Vector2(0.533333, 1), 0.0, 0.0, 0, 0, Vector2(0.673333, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_japdk"]
+texture_mode = 1
 curve = SubResource("Curve_lrdyo")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qqlsf"]
 particle_flag_disable_z = true
 emission_shape = 6
 emission_ring_axis = Vector3(0, 0, 0)
-emission_ring_height = 300.0
-emission_ring_radius = 8000.0
+emission_ring_height = 0.0
+emission_ring_radius = 7800.0
 emission_ring_inner_radius = 9000.0
-direction = Vector3(0, 0, 0)
 gravity = Vector3(0, 0, 0)
-radial_accel_min = -100.0
-radial_accel_max = -29.03
+radial_accel_min = -1000.0
+radial_accel_max = -1000.0
 scale_min = 15.0
 scale_max = 15.0
 alpha_curve = SubResource("CurveTexture_japdk")
@@ -27,8 +27,8 @@ alpha_curve = SubResource("CurveTexture_japdk")
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 amount = 200
 process_material = SubResource("ParticleProcessMaterial_qqlsf")
-lifetime = 13.0
-speed_scale = 5.0
-randomness = 0.22
+lifetime = 4.5
 trail_enabled = true
-trail_lifetime = 2.0
+trail_lifetime = 3.01
+trail_sections = 2
+trail_section_subdivisions = 1
