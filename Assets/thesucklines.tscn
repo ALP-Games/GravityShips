@@ -28,6 +28,7 @@ alpha_curve = SubResource("CurveTexture_japdk")
 amount = 200
 process_material = SubResource("ParticleProcessMaterial_qqlsf")
 lifetime = 4.5
+visibility_rect = Rect2(-8920.87, -8895.32, 17771.8, 17811.8)
 trail_enabled = true
 trail_lifetime = 3.01
 trail_sections = 2
